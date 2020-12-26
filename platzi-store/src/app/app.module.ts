@@ -16,9 +16,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductComponent, CartComponent, ExponentialPipe, HighlightDirective, HomeComponent, ProductsComponent, ContactComponent, DemoComponent, HeaderComponent, FooterComponent, BannerComponent, PageNotFoundComponent, ProductDetailComponent],
+  declarations: [AppComponent, ProductComponent, CartComponent, ExponentialPipe, HighlightDirective, HomeComponent, ProductsComponent, ContactComponent, DemoComponent, HeaderComponent, FooterComponent, BannerComponent, PageNotFoundComponent, ProductDetailComponent, LayoutComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
