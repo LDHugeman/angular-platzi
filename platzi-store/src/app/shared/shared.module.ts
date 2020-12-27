@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { ExponentialPipe } from './pipes/exponential.pipe';
 import { RouterModule } from '@angular/router';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     HighlightDirective,
     ExponentialPipe,
+    CartComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -19,6 +21,7 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     HighlightDirective,
     ExponentialPipe,
+    CartComponent,
   ],
 })
 export class SharedModule {}
