@@ -1,0 +1,15 @@
+<table mat-table [dataSource]="products" class="mat-elevation-z8">
+  <ng-container [matColumnDef]="displayedColums[0]">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <th mat-cell *matCellDef="let element">{{ element.id }}</th>
+  </ng-container>
+  <ng-container [matColumnDef]="displayedColums[1]">
+    <th mat-header-cell *matHeaderCellDef>TITLE</th>
+    <th mat-cell *matCellDef="let element">{{ element.title }}</th>
+  </ng-container>
+  <ng-container [matColumnDef]="displayedColums[3]">
+    <th mat-header-cell *matHeaderCellDef>PRICE</th>
+    <th mat-cell *matCellDef="let element">{{ element.price }}</th>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColums"></tr>
+</table>
