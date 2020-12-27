@@ -6,6 +6,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { ExponentialPipe } from './pipes/exponential.pipe';
 import { RouterModule } from '@angular/router';
 import { CartComponent } from './components/cart/cart.component';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { CartComponent } from './components/cart/cart.component';
     ExponentialPipe,
     CartComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MaterialModule],
   exports: [
     HeaderComponent,
     FooterComponent,
