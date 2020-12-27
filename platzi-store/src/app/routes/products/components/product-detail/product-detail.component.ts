@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Product } from 'src/app/models/product.model';
 import { ProductsService } from 'src/app/core/services/products.service';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-product-detail',
@@ -25,6 +26,19 @@ export class ProductDetailComponent implements OnInit {
   fetchProduct(id: string): void {
     this.productsService.getProduct(id).subscribe((product) => {
       this.product = product;
+    });
+  }
+
+  createProduct(): void {
+    const newProduct: Product = {
+      id: '222',
+      title: 'nuevo desde angular',
+      image: 'assets/images/banner-1.jpg',
+      price: 3000,
+      description: 'nuevo producto',
+    };
+    this.productsService.createProduct(newProduct).subscribe((product) => {
+      console.log(product);
     });
   }
 }
