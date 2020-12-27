@@ -14,24 +14,24 @@ import { Product } from 'src/app/models/product.model';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss'],
 })
-export class ProductComponent implements OnInit, DoCheck, OnDestroy {
+export class ProductComponent implements OnInit /*DoCheck, OnDestroy*/ {
   @Input() product: Product;
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
   today = new Date();
 
   constructor() {
-    console.log('1. constructor');
+    // console.log('1. constructor');
+  }
+
+  ngOnInit(): void {
+    // console.log(this.product);
+    // console.log('3. ngOnInit');
   }
 
   /*ngOnChanges(changes: SimpleChanges): void {
     console.log('2. ngOnChanges');
     console.log(changes);
-  }*/
-
-  ngOnInit(): void {
-    console.log(this.product);
-    console.log('3. ngOnInit');
   }
 
   ngDoCheck(): void {
@@ -40,7 +40,7 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
 
   ngOnDestroy(): void {
     console.log('5. ngOnDestroy');
-  }
+  }*/
 
   addCart(): void {
     console.log('añadir al carrito');
