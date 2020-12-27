@@ -45,6 +45,13 @@ const routes: Routes = [
       import('./routes/demo/demo.module').then((module) => module.DemoModule),
   },
   {
+    path: 'admin',
+    loadChildren: () =>
+      import('./routes/admin/admin.module').then(
+        (module) => module.AdminModule
+      ),
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./routes/page-not-found/page-not-found.module').then(
