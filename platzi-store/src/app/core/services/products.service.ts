@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { Product } from '../../models/product.model';
 
 @Injectable({
@@ -10,14 +11,10 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   getAllProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(
-      'https://platzi-store.herokuapp.com/products/'
-    );
+    return this.http.get<Product[]>(`${environment.url_api}/products`);
   }
 
   getProduct(id: string): Observable<Product> {
-    return this.http.get<Product>(
-      `https://platzi-store.herokuapp.com/products/${id}`
-    );
+    return this.http.get<Product>(`${environment.url_api}/products/${id}`);
   }
 }
