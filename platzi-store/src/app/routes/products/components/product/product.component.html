@@ -13,7 +13,7 @@
     <a mat-raised-button [routerLink]="['/products', product.id]"
       >Ver detalle</a
     >
-    <button (click)="addCart()" mat-raised-button color="primary">
+    <button (click)="addCart(product)" mat-raised-button color="primary">
       Agregar al carrito
     </button>
   </mat-card-actions>
