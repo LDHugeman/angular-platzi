@@ -59,6 +59,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'auth',
+    loadChildren: () =>
+      import('./routes/auth/auth.module').then((module) => module.AuthModule),
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./routes/page-not-found/page-not-found.module').then(
