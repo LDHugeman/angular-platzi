@@ -1,5 +1,6 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { CartService } from 'src/app/core/services/cart.service';
 import { Product } from 'src/app/models/product.model';
 
@@ -9,12 +10,13 @@ import { Product } from 'src/app/models/product.model';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  total$: Observable<number>;
   products: Product[];
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.cartService.cart$.subscribe((products) => {
-      this.products = products;
-    });
+    this.total$ = this.cartService.cart$.pipe(
+      map((products: Product[]) => products.length)
+    );
   }
 }
