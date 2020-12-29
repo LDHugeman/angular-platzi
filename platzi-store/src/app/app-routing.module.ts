@@ -36,6 +36,13 @@ const routes: Routes = [
             (module) => module.ContactModule
           ),
       },
+      {
+        path: 'order',
+        loadChildren: () =>
+          import('./routes/order/order.module').then(
+            (module) => module.OrderModule
+          ),
+      },
     ],
   },
   {
