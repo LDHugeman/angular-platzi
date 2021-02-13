@@ -35,6 +35,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'tabledata',
+        loadChildren: () =>
+          import('./routes/table-data/table-data.module').then(
+            (module) => module.TableDataModule
+          ),
+      },
+      {
         path: 'order',
         loadChildren: () =>
           import('./routes/order/order.module').then(
